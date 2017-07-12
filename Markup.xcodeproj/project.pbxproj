@@ -10,6 +10,7 @@
 		9902DBC71F1643C1004454BE /* MarkupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902DBC61F1643C1004454BE /* MarkupNode.swift */; };
 		9902DBCB1F1670E4004454BE /* MarkupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902DBCA1F1670E4004454BE /* MarkupParser.swift */; };
 		9902DBCD1F167738004454BE /* MarkupParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902DBCC1F167738004454BE /* MarkupParserTests.swift */; };
+		9902DBD01F16837A004454BE /* MarkupRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902DBCF1F16837A004454BE /* MarkupRenderer.swift */; };
 		994A8DEC1F14C2380023C7FF /* Markup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994A8DE21F14C2380023C7FF /* Markup.framework */; };
 		994A8DF31F14C2380023C7FF /* Markup.h in Headers */ = {isa = PBXBuildFile; fileRef = 994A8DE51F14C2380023C7FF /* Markup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994A8DFD1F14C2680023C7FF /* MarkupToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A8DFC1F14C2680023C7FF /* MarkupToken.swift */; };
@@ -32,6 +33,8 @@
 		9902DBCA1F1670E4004454BE /* MarkupParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupParser.swift; sourceTree = "<group>"; };
 		9902DBCC1F167738004454BE /* MarkupParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupParserTests.swift; sourceTree = "<group>"; };
 		9902DBCE1F167B6C004454BE /* Parser.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Parser.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9902DBCF1F16837A004454BE /* MarkupRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupRenderer.swift; sourceTree = "<group>"; };
+		9902DBD11F1687A7004454BE /* Renderer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Renderer.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		994A8DE21F14C2380023C7FF /* Markup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Markup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994A8DE51F14C2380023C7FF /* Markup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Markup.h; sourceTree = "<group>"; };
 		994A8DE61F14C2380023C7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 				994A8DFE1F14C4680023C7FF /* MarkupTokenizer.swift */,
 				9902DBC61F1643C1004454BE /* MarkupNode.swift */,
 				9902DBCA1F1670E4004454BE /* MarkupParser.swift */,
+				9902DBCF1F16837A004454BE /* MarkupRenderer.swift */,
 			);
 			path = Markup;
 			sourceTree = "<group>";
@@ -104,6 +108,7 @@
 		99FE0FFA1F1622A9004A1C6B /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				9902DBD11F1687A7004454BE /* Renderer.playground */,
 				9902DBCE1F167B6C004454BE /* Parser.playground */,
 				9902DBC51F1623A6004454BE /* Tokenizer.playground */,
 			);
@@ -223,6 +228,7 @@
 				9902DBC71F1643C1004454BE /* MarkupNode.swift in Sources */,
 				9902DBCB1F1670E4004454BE /* MarkupParser.swift in Sources */,
 				994A8DFF1F14C4680023C7FF /* MarkupTokenizer.swift in Sources */,
+				9902DBD01F16837A004454BE /* MarkupRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
