@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9902DBC71F1643C1004454BE /* MarkupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902DBC61F1643C1004454BE /* MarkupNode.swift */; };
+		9902DBCB1F1670E4004454BE /* MarkupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902DBCA1F1670E4004454BE /* MarkupParser.swift */; };
+		9902DBCD1F167738004454BE /* MarkupParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9902DBCC1F167738004454BE /* MarkupParserTests.swift */; };
 		994A8DEC1F14C2380023C7FF /* Markup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994A8DE21F14C2380023C7FF /* Markup.framework */; };
-		994A8DF11F14C2380023C7FF /* MarkupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A8DF01F14C2380023C7FF /* MarkupTests.swift */; };
 		994A8DF31F14C2380023C7FF /* Markup.h in Headers */ = {isa = PBXBuildFile; fileRef = 994A8DE51F14C2380023C7FF /* Markup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		994A8DFD1F14C2680023C7FF /* MarkupToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A8DFC1F14C2680023C7FF /* MarkupToken.swift */; };
+		994A8DFF1F14C4680023C7FF /* MarkupTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A8DFE1F14C4680023C7FF /* MarkupTokenizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +27,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9902DBC51F1623A6004454BE /* Tokenizer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Tokenizer.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9902DBC61F1643C1004454BE /* MarkupNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupNode.swift; sourceTree = "<group>"; };
+		9902DBCA1F1670E4004454BE /* MarkupParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupParser.swift; sourceTree = "<group>"; };
+		9902DBCC1F167738004454BE /* MarkupParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupParserTests.swift; sourceTree = "<group>"; };
+		9902DBCE1F167B6C004454BE /* Parser.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Parser.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		994A8DE21F14C2380023C7FF /* Markup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Markup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994A8DE51F14C2380023C7FF /* Markup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Markup.h; sourceTree = "<group>"; };
 		994A8DE61F14C2380023C7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		994A8DEB1F14C2380023C7FF /* MarkupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		994A8DF01F14C2380023C7FF /* MarkupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupTests.swift; sourceTree = "<group>"; };
 		994A8DF21F14C2380023C7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		994A8DFC1F14C2680023C7FF /* MarkupToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupToken.swift; sourceTree = "<group>"; };
+		994A8DFE1F14C4680023C7FF /* MarkupTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupTokenizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,7 @@
 		994A8DD81F14C2380023C7FF = {
 			isa = PBXGroup;
 			children = (
+				99FE0FFA1F1622A9004A1C6B /* Playgrounds */,
 				994A8DE41F14C2380023C7FF /* Markup */,
 				994A8DEF1F14C2380023C7FF /* MarkupTests */,
 				994A8DE31F14C2380023C7FF /* Products */,
@@ -73,6 +84,10 @@
 			children = (
 				994A8DE51F14C2380023C7FF /* Markup.h */,
 				994A8DE61F14C2380023C7FF /* Info.plist */,
+				994A8DFC1F14C2680023C7FF /* MarkupToken.swift */,
+				994A8DFE1F14C4680023C7FF /* MarkupTokenizer.swift */,
+				9902DBC61F1643C1004454BE /* MarkupNode.swift */,
+				9902DBCA1F1670E4004454BE /* MarkupParser.swift */,
 			);
 			path = Markup;
 			sourceTree = "<group>";
@@ -80,10 +95,19 @@
 		994A8DEF1F14C2380023C7FF /* MarkupTests */ = {
 			isa = PBXGroup;
 			children = (
-				994A8DF01F14C2380023C7FF /* MarkupTests.swift */,
+				9902DBCC1F167738004454BE /* MarkupParserTests.swift */,
 				994A8DF21F14C2380023C7FF /* Info.plist */,
 			);
 			path = MarkupTests;
+			sourceTree = "<group>";
+		};
+		99FE0FFA1F1622A9004A1C6B /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				9902DBCE1F167B6C004454BE /* Parser.playground */,
+				9902DBC51F1623A6004454BE /* Tokenizer.playground */,
+			);
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +168,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "Guille Gonzalez";
+				ORGANIZATIONNAME = "Tuenti Technologies S.L.";
 				TargetAttributes = {
 					994A8DE11F14C2380023C7FF = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 					994A8DEA1F14C2380023C7FF = {
 						CreatedOnToolsVersion = 9.0;
@@ -194,6 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994A8DFD1F14C2680023C7FF /* MarkupToken.swift in Sources */,
+				9902DBC71F1643C1004454BE /* MarkupNode.swift in Sources */,
+				9902DBCB1F1670E4004454BE /* MarkupParser.swift in Sources */,
+				994A8DFF1F14C4680023C7FF /* MarkupTokenizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				994A8DF11F14C2380023C7FF /* MarkupTests.swift in Sources */,
+				9902DBCD1F167738004454BE /* MarkupParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +361,7 @@
 		994A8DF71F14C2380023C7FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = T5TF72MCE6;
@@ -344,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gonzalezreal.Markup;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -352,6 +383,7 @@
 		994A8DF81F14C2380023C7FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = T5TF72MCE6;
@@ -372,6 +404,7 @@
 		994A8DFA1F14C2380023C7FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T5TF72MCE6;
 				INFOPLIST_FILE = MarkupTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -385,6 +418,7 @@
 		994A8DFB1F14C2380023C7FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T5TF72MCE6;
 				INFOPLIST_FILE = MarkupTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -414,6 +448,7 @@
 				994A8DF81F14C2380023C7FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		994A8DF91F14C2380023C7FF /* Build configuration list for PBXNativeTarget "MarkupTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +457,7 @@
 				994A8DFB1F14C2380023C7FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
