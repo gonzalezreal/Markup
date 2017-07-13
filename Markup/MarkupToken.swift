@@ -41,3 +41,16 @@ extension MarkupToken: CustomStringConvertible {
 		}
 	}
 }
+
+extension MarkupToken: CustomDebugStringConvertible {
+	var debugDescription: String {
+		switch self {
+		case .text(let value):
+			return "text(\(value))"
+		case .leftDelimiter(let value):
+			return "leftDelimiter(\(value))"
+		case .rightDelimiter(let value):
+			return "rightDelimiter(\(value))"
+		}
+	}
+}

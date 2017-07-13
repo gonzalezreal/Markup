@@ -5,7 +5,7 @@ func dumpTokens(for input: String) {
 
 	print("Tokens for \"\(input)\"")
 	while let token = tokenizer.nextToken() {
-		print("\t\(token)")
+		print("\t\(token.debugDescription)")
 	}
 }
 
