@@ -10,9 +10,9 @@ import Foundation
 
 public enum MarkupNode {
 	case plain(text: String)
-	indirect case strong(children: [MarkupNode])
-	indirect case emphasis(children: [MarkupNode])
-	indirect case delete(children: [MarkupNode])
+	case strong(children: [MarkupNode])
+	case emphasis(children: [MarkupNode])
+	case delete(children: [MarkupNode])
 }
 
 extension MarkupNode {
