@@ -28,7 +28,7 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "hello $.;'there"
 		let expected: [MarkupNode] = [
-			.plain(text: "hello $.;'there")
+			.plain("hello $.;'there")
 		]
 
 		// when
@@ -42,11 +42,11 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "hello *_~ 🤡there"
 		let expected: [MarkupNode] = [
-			.plain(text: "hello "),
-			.plain(text: "*"),
-			.plain(text: "_"),
-			.plain(text: "~"),
-			.plain(text: " 🤡there")
+			.plain("hello "),
+			.plain("*"),
+			.plain("_"),
+			.plain("~"),
+			.plain(" 🤡there")
 		]
 
 		// when
@@ -60,9 +60,9 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello *foo bar"
 		let expected: [MarkupNode] = [
-			.plain(text: "Hello "),
-			.plain(text: "*"),
-			.plain(text: "foo bar")
+			.plain("Hello "),
+			.plain("*"),
+			.plain("foo bar")
 		]
 
 		// when
@@ -76,11 +76,11 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello.*Foo*!"
 		let expected: [MarkupNode] = [
-			.plain(text: "Hello."),
-			.strong(children: [
-				.plain(text: "Foo")
+			.plain("Hello."),
+			.strong([
+				.plain("Foo")
 			]),
-			.plain(text: "!")
+			.plain("!")
 		]
 
 		// when
@@ -94,11 +94,11 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello. *Foo* "
 		let expected: [MarkupNode] = [
-			.plain(text: "Hello. "),
-			.strong(children: [
-				.plain(text: "Foo")
+			.plain("Hello. "),
+			.strong([
+				.plain("Foo")
 			]),
-			.plain(text: " ")
+			.plain(" ")
 		]
 
 		// when
@@ -112,11 +112,11 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello.\n*Foo*\n"
 		let expected: [MarkupNode] = [
-			.plain(text: "Hello.\n"),
-			.strong(children: [
-				.plain(text: "Foo")
+			.plain("Hello.\n"),
+			.strong([
+				.plain("Foo")
 			]),
-			.plain(text: "\n")
+			.plain("\n")
 		]
 
 		// when
@@ -130,9 +130,28 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "*Foo*"
 		let expected: [MarkupNode] = [
-			.strong(children: [
-				.plain(text: "Foo")
+			.strong([
+				.plain("Foo")
 			])
+		]
+
+		// when
+		let result = MarkupParser.parse(text: input)
+
+		// then
+		XCTAssertEqual(result, expected)
+	}
+
+	func testOpeningDelimiterEnclosedByDelimiters_parse_returnsFormattedText() {
+		// given
+		let input = "Hello *_world*_"
+		let expected: [MarkupNode] = [
+			.plain("Hello "),
+			.strong([
+				.plain("_"),
+				.plain("world")
+			]),
+			.plain("_")
 		]
 
 		// when
@@ -146,12 +165,12 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "_1_2_3_"
 		let expected: [MarkupNode] = [
-			.emphasis(children: [
-				.plain(text: "1"),
-				.plain(text: "_"),
-				.plain(text: "2"),
-				.plain(text: "_"),
-				.plain(text: "3")
+			.emphasis([
+				.plain("1"),
+				.plain("_"),
+				.plain("2"),
+				.plain("_"),
+				.plain("3")
 			])
 		]
 
@@ -166,15 +185,15 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello ~*_world_*~!"
 		let expected: [MarkupNode] = [
-			.plain(text: "Hello "),
-			.delete(children: [
-				.strong(children: [
-					.emphasis(children: [
-						.plain(text: "world")
+			.plain("Hello "),
+			.delete([
+				.strong([
+					.emphasis([
+						.plain("world")
 					])
 				])
 			]),
-			.plain(text: "!")
+			.plain("!")
 		]
 
 		// when

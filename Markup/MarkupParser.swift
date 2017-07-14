@@ -15,6 +15,7 @@ public struct MarkupParser {
 	}
 
 	private var tokenizer: MarkupTokenizer
+	private var openingDelimiters: [UnicodeScalar] = []
 
 	private init(text: String) {
 		tokenizer = MarkupTokenizer(string: text)
@@ -27,47 +28,47 @@ private extension MarkupParser {
 
 		while let token = tokenizer.nextToken() {
 			switch token {
-			case .text(let value):
-				elements.append(.plain(text: value))
-			case .leftDelimiter(let value):
-				elements.append(contentsOf: parse(delimiter: value))
+			case .text(let text):
+				elements.append(.plain(text))
+
+			case .leftDelimiter(let delimiter):
+				// Recursively parse all the tokens following the delimiter
+				openingDelimiters.append(delimiter)
+				elements.append(contentsOf: parse())
+
+			case .rightDelimiter(let delimiter) where openingDelimiters.contains(delimiter):
+				guard let containerNode = close(delimiter: delimiter, elements: elements) else {
+					fatalError("There is no MarkupNode for \(delimiter)")
+				}
+				return [containerNode]
+
 			default:
-				elements.append(.plain(text: token.description))
+				elements.append(.plain(token.description))
 			}
 		}
+
+		// Convert orphaned opening delimiters to plain text
+		let plainElements: [MarkupNode] = openingDelimiters.map { .plain(String($0)) }
+		elements.insert(contentsOf: plainElements, at: 0)
+		openingDelimiters.removeAll()
 
 		return elements
 	}
 
-	mutating func parse(delimiter: UnicodeScalar) -> [MarkupNode] {
-		var elements: [MarkupNode] = []
-		var isClosed = false
+	mutating func close(delimiter: UnicodeScalar, elements: [MarkupNode]) -> MarkupNode? {
+		var newElements = elements
 
-		while let token = tokenizer.nextToken() {
-			if token == .rightDelimiter(delimiter) {
-				isClosed = true
+		// Convert orphaned opening delimiters to plain text
+		while openingDelimiters.count > 0 {
+			let openingDelimiter = openingDelimiters.popLast()!
+
+			if openingDelimiter == delimiter {
 				break
-			}
-
-			switch token {
-			case .text(let value):
-				elements.append(.plain(text: value))
-			case .leftDelimiter(let value):
-				elements.append(contentsOf: parse(delimiter: value))
-			default:
-				elements.append(.plain(text: token.description))
+			} else {
+				newElements.insert(.plain(String(openingDelimiter)), at: 0)
 			}
 		}
 
-		if isClosed {
-			guard let parentNode = MarkupNode(delimiter: delimiter, children: elements) else {
-				fatalError("Delimiter '\(delimiter)' is not supported")
-			}
-			return [parentNode]
-		} else {
-			// Left delimiter without a corresponding right delimiter
-			elements.insert(.plain(text: String(delimiter)), at: 0)
-			return elements
-		}
+		return MarkupNode(delimiter: delimiter, children: newElements)
 	}
 }

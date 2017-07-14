@@ -9,21 +9,21 @@
 import Foundation
 
 public enum MarkupNode {
-	case plain(text: String)
-	case strong(children: [MarkupNode])
-	case emphasis(children: [MarkupNode])
-	case delete(children: [MarkupNode])
+	case plain(String)
+	case strong([MarkupNode])
+	case emphasis([MarkupNode])
+	case delete([MarkupNode])
 }
 
 extension MarkupNode {
 	init?(delimiter: UnicodeScalar, children: [MarkupNode]) {
 		switch delimiter {
 		case "*":
-			self = .strong(children: children)
+			self = .strong(children)
 		case "_":
-			self = .emphasis(children: children)
+			self = .emphasis(children)
 		case "~":
-			self = .delete(children: children)
+			self = .delete(children)
 		default:
 			return nil
 		}
