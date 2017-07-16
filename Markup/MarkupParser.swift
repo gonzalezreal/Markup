@@ -29,7 +29,7 @@ private extension MarkupParser {
 		while let token = tokenizer.nextToken() {
 			switch token {
 			case .text(let text):
-				elements.append(.plain(text))
+				elements.append(.text(text))
 
 			case .leftDelimiter(let delimiter):
 				// Recursively parse all the tokens following the delimiter
@@ -43,13 +43,13 @@ private extension MarkupParser {
 				return [containerNode]
 
 			default:
-				elements.append(.plain(token.description))
+				elements.append(.text(token.description))
 			}
 		}
 
 		// Convert orphaned opening delimiters to plain text
-		let plainElements: [MarkupNode] = openingDelimiters.map { .plain(String($0)) }
-		elements.insert(contentsOf: plainElements, at: 0)
+		let textElements: [MarkupNode] = openingDelimiters.map { .text(String($0)) }
+		elements.insert(contentsOf: textElements, at: 0)
 		openingDelimiters.removeAll()
 
 		return elements
@@ -65,7 +65,7 @@ private extension MarkupParser {
 			if openingDelimiter == delimiter {
 				break
 			} else {
-				newElements.insert(.plain(String(openingDelimiter)), at: 0)
+				newElements.insert(.text(String(openingDelimiter)), at: 0)
 			}
 		}
 

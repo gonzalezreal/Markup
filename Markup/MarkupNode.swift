@@ -9,7 +9,7 @@
 import Foundation
 
 public enum MarkupNode {
-	case plain(String)
+	case text(String)
 	case strong([MarkupNode])
 	case emphasis([MarkupNode])
 	case delete([MarkupNode])

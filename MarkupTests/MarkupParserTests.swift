@@ -28,7 +28,7 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "hello $.;'there"
 		let expected: [MarkupNode] = [
-			.plain("hello $.;'there")
+			.text("hello $.;'there")
 		]
 
 		// when
@@ -42,11 +42,11 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "hello *_~ 🤡there"
 		let expected: [MarkupNode] = [
-			.plain("hello "),
-			.plain("*"),
-			.plain("_"),
-			.plain("~"),
-			.plain(" 🤡there")
+			.text("hello "),
+			.text("*"),
+			.text("_"),
+			.text("~"),
+			.text(" 🤡there")
 		]
 
 		// when
@@ -60,9 +60,9 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello *foo bar"
 		let expected: [MarkupNode] = [
-			.plain("Hello "),
-			.plain("*"),
-			.plain("foo bar")
+			.text("Hello "),
+			.text("*"),
+			.text("foo bar")
 		]
 
 		// when
@@ -76,11 +76,11 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello.*Foo*!"
 		let expected: [MarkupNode] = [
-			.plain("Hello."),
+			.text("Hello."),
 			.strong([
-				.plain("Foo")
+				.text("Foo")
 			]),
-			.plain("!")
+			.text("!")
 		]
 
 		// when
@@ -94,11 +94,11 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello. *Foo* "
 		let expected: [MarkupNode] = [
-			.plain("Hello. "),
+			.text("Hello. "),
 			.strong([
-				.plain("Foo")
+				.text("Foo")
 			]),
-			.plain(" ")
+			.text(" ")
 		]
 
 		// when
@@ -112,11 +112,11 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello.\n*Foo*\n"
 		let expected: [MarkupNode] = [
-			.plain("Hello.\n"),
+			.text("Hello.\n"),
 			.strong([
-				.plain("Foo")
+				.text("Foo")
 			]),
-			.plain("\n")
+			.text("\n")
 		]
 
 		// when
@@ -131,7 +131,7 @@ class MarkupParserTests: XCTestCase {
 		let input = "*Foo*"
 		let expected: [MarkupNode] = [
 			.strong([
-				.plain("Foo")
+				.text("Foo")
 			])
 		]
 
@@ -146,12 +146,12 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello *_world*_"
 		let expected: [MarkupNode] = [
-			.plain("Hello "),
+			.text("Hello "),
 			.strong([
-				.plain("_"),
-				.plain("world")
+				.text("_"),
+				.text("world")
 			]),
-			.plain("_")
+			.text("_")
 		]
 
 		// when
@@ -166,11 +166,11 @@ class MarkupParserTests: XCTestCase {
 		let input = "_1_2_3_"
 		let expected: [MarkupNode] = [
 			.emphasis([
-				.plain("1"),
-				.plain("_"),
-				.plain("2"),
-				.plain("_"),
-				.plain("3")
+				.text("1"),
+				.text("_"),
+				.text("2"),
+				.text("_"),
+				.text("3")
 			])
 		]
 
@@ -185,15 +185,15 @@ class MarkupParserTests: XCTestCase {
 		// given
 		let input = "Hello ~*_world_*~!"
 		let expected: [MarkupNode] = [
-			.plain("Hello "),
+			.text("Hello "),
 			.delete([
 				.strong([
 					.emphasis([
-						.plain("world")
+						.text("world")
 					])
 				])
 			]),
-			.plain("!")
+			.text("!")
 		]
 
 		// when

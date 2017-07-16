@@ -30,7 +30,7 @@ private extension MarkupNode {
 		}
 
 		switch self {
-		case .plain(let text):
+		case .text(let text):
 			return NSAttributedString(string: text, attributes: attributes)
 
 		case .strong(let children):
