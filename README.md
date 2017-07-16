@@ -50,3 +50,36 @@ label.attributedText = renderer.render(text:
 creates a label that will produce the following output:
 
 ![Renderer](https://cdn-images-1.medium.com/max/1600/1*REYpGzicXpSY4G8fI5J-PQ.png)
+
+You can also use `MarkupParser` to generate an abstract syntax tree for a markup text:
+
+```Swift
+var nodes = MarkupParser.parse(text: "The quick, ~red~ brown fox jumps over a _*lazy dog*_.")
+dump(nodes)
+
+// Outputs:
+[
+  .text("The "),
+  .strong([
+    .text("quick")
+  ]),
+  .text(", "),
+  .delete([
+    .text("red")
+  ]),
+  .text(" brown fox jumps over a "),
+  .emphasis([
+    .strong([
+       .text("lazy dog")
+    ])
+  ])
+]
+```
+
+If you are curious, you can read [this post](www.example.com) for a walkthrough on how this framework was created.
+
+## Contact
+
+[Guillermo Gonzalez](http://github.com/gonzalezreal)  
+[@gonzalezreal](https://twitter.com/gonzalezreal)
+
