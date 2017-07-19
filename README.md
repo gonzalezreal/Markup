@@ -54,7 +54,7 @@ creates a label that will produce the following output:
 You can also use `MarkupParser` to generate an abstract syntax tree for a markup text:
 
 ```Swift
-var nodes = MarkupParser.parse(text: "The quick, ~red~ brown fox jumps over a _*lazy dog*_.")
+var nodes = MarkupParser.parse(text: "The *quick*, ~red~ brown fox jumps over a _*lazy dog*_.")
 dump(nodes)
 
 // Outputs:
@@ -76,7 +76,7 @@ dump(nodes)
 ]
 ```
 
-If you are curious, you can read [this post](www.example.com) for a walkthrough on how this framework was created.
+If you are curious, you can read [this post](www.example.com) for a walkthrough on how this framework was implemented.
 
 ## Contact
 
