@@ -76,7 +76,7 @@ dump(nodes)
 ]
 ```
 
-If you are curious, you can read [this post](www.example.com) for a walkthrough on how this framework was implemented.
+If you are curious, you can read [this post](https://medium.com/makingtuenti/writing-a-lightweight-markup-parser-in-swift-5c8a5f0f793f) for a walkthrough on how this framework was implemented.
 
 ## Contact
 
