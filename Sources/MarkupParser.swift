@@ -1,11 +1,3 @@
-//
-//  MarkupParser.swift
-//  Markup
-//
-//  Created by Guille Gonzalez on 12/07/2017.
-//  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.
-//
-
 import Foundation
 
 public struct MarkupParser {
@@ -20,10 +12,8 @@ public struct MarkupParser {
 	private init(text: String) {
 		tokenizer = MarkupTokenizer(string: text)
 	}
-}
 
-private extension MarkupParser {
-	mutating func parse() -> [MarkupNode] {
+	private mutating func parse() -> [MarkupNode] {
 		var elements: [MarkupNode] = []
 
 		while let token = tokenizer.nextToken() {
@@ -55,7 +45,7 @@ private extension MarkupParser {
 		return elements
 	}
 
-	mutating func close(delimiter: UnicodeScalar, elements: [MarkupNode]) -> MarkupNode? {
+	private mutating func close(delimiter: UnicodeScalar, elements: [MarkupNode]) -> MarkupNode? {
 		var newElements = elements
 
 		// Convert orphaned opening delimiters to plain text
