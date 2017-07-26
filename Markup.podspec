@@ -1,14 +1,19 @@
 Pod::Spec.new do |s|
   s.name         = "Markup"
-  s.version      = "0.1"
-  s.summary      = ""
+  s.version      = "1.0"
+  s.summary      = "Lightweight markup text formatting in Swift"
   s.description  = <<-DESC
-    Your description here.
+    Markup generates attributed strings using a familiar markup syntax:
+
+    * To emphasize words or sentences, you can surround the text with \*asterisks\* to create bold text or \_underscores\_ for italic text.
+    * To show corrections in the text, surround the text with \~tildes\~ to strike out the text.
+    * You can combine formatting options.
   DESC
   s.homepage     = "https://github.com/gonzalezreal/Markup"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Guille Gonzalez" => "gonzalezreal@icloud.com" }
-  s.social_media_url   = ""
+  s.social_media_url   = "https://twitter.com/gonzalezreal"
+  s.screenshot  = 'https://raw.githubusercontent.com/gonzalezreal/Markup/master/MarkupExample/Screenshot.png'
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
   s.watchos.deployment_target = "2.0"
