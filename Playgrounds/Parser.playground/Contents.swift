@@ -1,4 +1,7 @@
+import Cocoa
 import Markup
+
+// You must build the Markup-macOS target to run this playground.
 
 var nodes = MarkupParser.parse(text: "The quick, ~red~ brown fox jumps over a _*lazy dog*_.")
 dump(nodes)

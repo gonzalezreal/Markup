@@ -1,4 +1,7 @@
+import Cocoa
 @testable import Markup
+
+// You must build the Markup-macOS target to run this playground.
 
 func dumpTokens(for input: String) {
 	var tokenizer = MarkupTokenizer(string: input)
