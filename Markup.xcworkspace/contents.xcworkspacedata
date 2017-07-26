@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "container:Markup.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MarkupExample.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:Playgrounds"
+      name = "Playgrounds">
+      <FileRef
+         location = "group:Tokenizer.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Parser.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Renderer.playground">
+      </FileRef>
+   </Group>
+</Workspace>

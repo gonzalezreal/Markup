@@ -1,11 +1,3 @@
-//
-//  MarkupTokenizer.swift
-//  Markup
-//
-//  Created by Guille Gonzalez on 11/07/2017.
-//  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.
-//
-
 import Foundation
 
 private extension CharacterSet {
@@ -71,10 +63,8 @@ struct MarkupTokenizer {
 
 		return token
 	}
-}
 
-private extension MarkupTokenizer {
-	var current: UnicodeScalar? {
+	private var current: UnicodeScalar? {
 		guard currentIndex < input.endIndex else {
 			return nil
 		}
@@ -82,7 +72,7 @@ private extension MarkupTokenizer {
 		return input[currentIndex]
 	}
 
-	var previous: UnicodeScalar? {
+	private var previous: UnicodeScalar? {
 		guard currentIndex > input.startIndex else {
 			return nil
 		}
@@ -91,7 +81,7 @@ private extension MarkupTokenizer {
 		return input[index]
 	}
 
-	var next: UnicodeScalar? {
+	private var next: UnicodeScalar? {
 		guard currentIndex < input.endIndex else {
 			return nil
 		}
@@ -105,11 +95,11 @@ private extension MarkupTokenizer {
 		return input[index]
 	}
 
-	mutating func scan(delimiter d: UnicodeScalar) -> MarkupToken? {
+	private mutating func scan(delimiter d: UnicodeScalar) -> MarkupToken? {
 		return scanRight(delimiter: d) ?? scanLeft(delimiter: d)
 	}
 
-	mutating func scanLeft(delimiter: UnicodeScalar) -> MarkupToken? {
+	private mutating func scanLeft(delimiter: UnicodeScalar) -> MarkupToken? {
 		let p = previous ?? .space
 
 		guard let n = next else {
@@ -130,7 +120,7 @@ private extension MarkupTokenizer {
 		return .leftDelimiter(delimiter)
 	}
 
-	mutating func scanRight(delimiter: UnicodeScalar) -> MarkupToken? {
+	private mutating func scanRight(delimiter: UnicodeScalar) -> MarkupToken? {
 		guard let p = previous else {
 			return nil
 		}
@@ -155,7 +145,7 @@ private extension MarkupTokenizer {
 		return .rightDelimiter(delimiter)
 	}
 
-	mutating func scanText() -> MarkupToken? {
+	private mutating func scanText() -> MarkupToken? {
 		let startIndex = currentIndex
 		scanUntil { CharacterSet.delimiters.contains($0) }
 
@@ -166,13 +156,13 @@ private extension MarkupTokenizer {
 		return .text(String(input[startIndex..<currentIndex]))
 	}
 
-	mutating func scanUntil(_ predicate: (UnicodeScalar) -> Bool) {
+	private mutating func scanUntil(_ predicate: (UnicodeScalar) -> Bool) {
 		while currentIndex < input.endIndex && !predicate(input[currentIndex]) {
 			advance()
 		}
 	}
 
-	mutating func advance() {
+	private mutating func advance() {
 		currentIndex = input.index(after: currentIndex)
 	}
 }

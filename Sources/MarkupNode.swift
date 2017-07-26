@@ -1,11 +1,3 @@
-//
-//  MarkupNode.swift
-//  Markup
-//
-//  Created by Guille Gonzalez on 12/07/2017.
-//  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.
-//
-
 import Foundation
 
 public enum MarkupNode {
