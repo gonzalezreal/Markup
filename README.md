@@ -70,15 +70,15 @@ Both the parsing and the rendering will take linear time to complete.
 [This post](https://medium.com/makingtuenti/writing-a-lightweight-markup-parser-in-swift-5c8a5f0f793f) explains how Markup internally works, in case you are curious about the implementation.
 
 ## Installation
-**Using [CocoaPods](https://cocoapods.org)**
+**Using CocoaPods**
 
 Add `pod Markup` to your `Podfile`
 
-**Using [Carthage](https://github.com/Carthage/Carthage)**
+**Using Carthage**
 
 Add `git "gonzalezreal/Markup"` to your `Cartfile`
 
-**Using the [Swift Package Manager](https://github.com/apple/swift-package-manager)**
+**Using the Swift Package Manager**
 
 Add `Package(url: "https://github.com/gonzalezreal/Markup.git", majorVersion: 1)` to your `Package.swift` file.
 
