@@ -4,6 +4,9 @@
    <FileRef
       location = "container:Markup.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:MarkupExample.xcodeproj">
+   </FileRef>
    <Group
       location = "container:Playgrounds"
       name = "Playgrounds">
