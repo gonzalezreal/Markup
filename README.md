@@ -1,7 +1,11 @@
 # Markup
-Markup is a simple text formatter written in Swift. It uses a syntax similar to the one you can find in apps like Slack or WhatsApp:
+[![CocoaPods](https://img.shields.io/cocoapods/v/Markup.svg)](https://cocoapods.org/pods/Markup)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Platforms](https://img.shields.io/cocoapods/p/Markup.svg)](https://cocoapods.org/pods/Markup)
 
-* To emphasize words or sentences, you can surround the text with \*asterisks\* to create bold text, or \_underscores\_ for italic text.
+Markup generates attributed strings using a familiar markup syntax:
+
+* To emphasize words or sentences, you can surround the text with \*asterisks\* to create bold text or \_underscores\_ for italic text.
 * To show corrections in the text, surround the text with \~tildes\~ to strike out the text.
 * You can combine formatting options.
 
@@ -15,46 +19,30 @@ will be formatted like this:
 
 The **quick**, ~red~ brown fox jumps over a ***lazy dog***.
 
-Another additional feature is that intra-world formatting is ignored. For example, the following text:
+Just to give you an idea, here is a screenshot of the sample application displaying the markup text and the resulting attributed string:
 
-```
-Compute _6*4*8_. _Quick_zephyrs_blow_.
-```
+<p align="center">
+    <img src="https://raw.githubusercontent.com/gonzalezreal/Markup/master/MarkupExample/Screenshot.png" width="50%" alt="Screenshot" />
+</p>
 
-will be formatted like this:
+## Examples
+**Render an attributed string**
 
-Compute _6\*4\*8_. _Quick\_zephyrs\_blow_.
-
-## Usage
-You can use the `MarkupRenderer` class to generate an `NSAttributedString` from a Markup text.
-
-For example, this snippet:
+You can use `MarkupRenderer` to generate an attributed string from a given markup text:
 
 ```swift
 import Markup
 
-let renderer = MarkupRenderer(baseFont: UIFont.systemFont(ofSize: 16))
-
-let label = UILabel()
-label.numberOfLines = 0
-label.backgroundColor = UIColor.white
-label.textColor = UIColor.black
-label.attributedText = renderer.render(text:
-    """
-    The *quick*, ~red~ brown fox jumps over a _*lazy dog*_.
-    Compute _6*4*8_. _Quick_zephyrs_blow_.
-    """
-)
+let renderer = MarkupRenderer(baseFont: .systemFont(ofSize: 16))
+let attributedText = renderer.render(text: "The *quick*, ~red~ brown fox jumps over a _*lazy dog*_.")
 ```
 
-creates a label that will produce the following output:
+**Access the markup syntax tree**
 
-![Renderer](https://cdn-images-1.medium.com/max/1600/1*REYpGzicXpSY4G8fI5J-PQ.png)
-
-You can also use `MarkupParser` to generate an abstract syntax tree for a markup text:
+Use `MarkupParser` to generate an abstract syntax tree for a markup text:
 
 ```Swift
-var nodes = MarkupParser.parse(text: "The *quick*, ~red~ brown fox jumps over a _*lazy dog*_")
+let nodes = MarkupParser.parse(text: "The *quick*, ~red~ brown fox jumps over a _*lazy dog*_")
 dump(nodes)
 
 // Outputs:
@@ -76,10 +64,25 @@ dump(nodes)
 ]
 ```
 
-If you are curious, you can read [this post](https://medium.com/makingtuenti/writing-a-lightweight-markup-parser-in-swift-5c8a5f0f793f) for a walkthrough on how this framework was implemented.
+## Performance
+Both the parsing and the rendering will take linear time to complete.
 
-## Contact
+[This post](https://medium.com/makingtuenti/writing-a-lightweight-markup-parser-in-swift-5c8a5f0f793f) explains how Markup internally works, in case you are curious about the implementation.
 
-[Guillermo Gonzalez](http://github.com/gonzalezreal)  
-[@gonzalezreal](https://twitter.com/gonzalezreal)
+## Installation
+**Using [CocoaPods](https://cocoapods.org)**
 
+Add `pod Markup` to your `Podfile`
+
+**Using [Carthage](https://github.com/Carthage/Carthage)**
+
+Add `git "gonzalezreal/Markup"` to your `Cartfile`
+
+**Using the [Swift Package Manager](https://github.com/apple/swift-package-manager)**
+
+Add `Package(url: "https://github.com/gonzalezreal/Markup.git", majorVersion: 1)` to your `Package.swift` file.
+
+## Help & Feedback
+- [Open an issue](https://github.com/gonzalezreal/Markup/issues/new) if you need help, if you found a bug, or if you want to discuss a feature request.
+- [Open a PR](https://github.com/gonzalezreal/Markup/pull/new/master) if you want to make some change to `Markup`.
+- Contact [@gonzalezreal](https://twitter.com/gonzalezreal) on Twitter.
