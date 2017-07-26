@@ -50,7 +50,7 @@ private extension MarkupNode {
 	}
 }
 
-private extension Array where Element: NSAttributedString {
+extension Array where Element: NSAttributedString {
 	func joined() -> NSAttributedString {
 		let result = NSMutableAttributedString()
 		for element in self {
@@ -61,7 +61,7 @@ private extension Array where Element: NSAttributedString {
 }
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-	private extension UIFont {
+	extension UIFont {
 		func boldFont() -> UIFont? {
 			return addingSymbolicTraits(.traitBold)
 		}
@@ -80,7 +80,7 @@ private extension Array where Element: NSAttributedString {
 		}
 	}
 #elseif os(OSX)
-	private extension NSFont {
+	extension NSFont {
 		func boldFont() -> NSFont? {
 			return NSFontManager.shared().convert(self, toHaveTrait: .boldFontMask)
 		}

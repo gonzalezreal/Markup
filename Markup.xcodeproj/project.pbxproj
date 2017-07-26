@@ -31,6 +31,9 @@
 		99211A771F279C0A0039BB88 /* MarkupParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99211A721F279BCF0039BB88 /* MarkupParserTests.swift */; };
 		99211A781F279C0D0039BB88 /* MarkupParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99211A721F279BCF0039BB88 /* MarkupParserTests.swift */; };
 		99211A791F279C0E0039BB88 /* MarkupParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99211A721F279BCF0039BB88 /* MarkupParserTests.swift */; };
+		99E800001F28814500AAE464 /* MarkupRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E8FFFF1F28814500AAE464 /* MarkupRendererTests.swift */; };
+		99E800011F28814500AAE464 /* MarkupRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E8FFFF1F28814500AAE464 /* MarkupRendererTests.swift */; };
+		99E800021F28814500AAE464 /* MarkupRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E8FFFF1F28814500AAE464 /* MarkupRendererTests.swift */; };
 		DD7502881C68FEDE006590AF /* Markup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* Markup.framework */; };
 		DD7502921C690C7A006590AF /* Markup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* Markup.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +74,7 @@
 		99211A5C1F279AAE0039BB88 /* MarkupToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupToken.swift; sourceTree = "<group>"; };
 		99211A5D1F279AAE0039BB88 /* MarkupTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupTokenizer.swift; sourceTree = "<group>"; };
 		99211A721F279BCF0039BB88 /* MarkupParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupParserTests.swift; sourceTree = "<group>"; };
+		99E8FFFF1F28814500AAE464 /* MarkupRendererTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupRendererTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* Markup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Markup.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* MarkupTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MarkupTests.plist; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* Markup-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Markup-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				99211A721F279BCF0039BB88 /* MarkupParserTests.swift */,
+				99E8FFFF1F28814500AAE464 /* MarkupRendererTests.swift */,
 			);
 			name = Tests;
 			path = Tests/MarkupTests;
@@ -495,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E800001F28814500AAE464 /* MarkupRendererTests.swift in Sources */,
 				99211A771F279C0A0039BB88 /* MarkupParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E800011F28814500AAE464 /* MarkupRendererTests.swift in Sources */,
 				99211A781F279C0D0039BB88 /* MarkupParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E800021F28814500AAE464 /* MarkupRendererTests.swift in Sources */,
 				99211A791F279C0E0039BB88 /* MarkupParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
