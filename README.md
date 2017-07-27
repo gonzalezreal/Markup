@@ -30,7 +30,7 @@ Just to give you an idea, here is a screenshot of the sample application display
 
 You can use `MarkupRenderer` to generate an attributed string from a given markup text:
 
-```swift
+```Swift
 import Markup
 
 let renderer = MarkupRenderer(baseFont: .systemFont(ofSize: 16))
