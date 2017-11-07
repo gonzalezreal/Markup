@@ -1,3 +1,9 @@
+// Markup
+//
+// Copyright (c) 2017 Guille Gonzalez
+// See LICENSE file for license
+//
+
 #if os(iOS) || os(tvOS) || os(watchOS)
 	import UIKit.UIFont
 	public typealias Font = UIFont

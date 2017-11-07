@@ -1,3 +1,9 @@
+// Markup
+//
+// Copyright (c) 2017 Guille Gonzalez
+// See LICENSE file for license
+//
+
 import Cocoa
 import Markup
 
