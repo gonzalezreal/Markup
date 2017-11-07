@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Markup"
-  s.version      = "2.0-beta.1"
+  s.version      = "2.0"
   s.summary      = "Lightweight markup text formatting in Swift"
   s.description  = <<-DESC
     Markup generates attributed strings using a familiar markup syntax:
