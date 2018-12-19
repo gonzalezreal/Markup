@@ -21,15 +21,15 @@ public final class MarkupRenderer {
 
 	public func render(text: String) -> NSAttributedString {
 		let elements = MarkupParser.parse(text: text)
-		let attributes = [NSAttributedStringKey.font: baseFont]
+        let attributes = [NSAttributedString.Key.font: baseFont]
 
 		return elements.map { $0.render(withAttributes: attributes) }.joined()
 	}
 }
 
 private extension MarkupNode {
-	func render(withAttributes attributes: [NSAttributedStringKey: Any]) -> NSAttributedString {
-		guard let currentFont = attributes[NSAttributedStringKey.font] as? Font else {
+    func render(withAttributes attributes: [NSAttributedString.Key: Any]) -> NSAttributedString {
+        guard let currentFont = attributes[NSAttributedString.Key.font] as? Font else {
 			fatalError("Missing font attribute in \(attributes)")
 		}
 
@@ -39,18 +39,18 @@ private extension MarkupNode {
 
 		case .strong(let children):
 			var newAttributes = attributes
-			newAttributes[NSAttributedStringKey.font] = currentFont.boldFont()
+            newAttributes[NSAttributedString.Key.font] = currentFont.boldFont()
 			return children.map { $0.render(withAttributes: newAttributes) }.joined()
 
 		case .emphasis(let children):
 			var newAttributes = attributes
-			newAttributes[NSAttributedStringKey.font] = currentFont.italicFont()
+            newAttributes[NSAttributedString.Key.font] = currentFont.italicFont()
 			return children.map { $0.render(withAttributes: newAttributes) }.joined()
 
 		case .delete(let children):
 			var newAttributes = attributes
-			newAttributes[NSAttributedStringKey.strikethroughStyle] = NSUnderlineStyle.styleSingle.rawValue
-			newAttributes[NSAttributedStringKey.baselineOffset] = 0
+            newAttributes[NSAttributedString.Key.strikethroughStyle] = NSUnderlineStyle.single.rawValue
+            newAttributes[NSAttributedString.Key.baselineOffset] = 0
 			return children.map { $0.render(withAttributes: newAttributes) }.joined()
 		}
 	}
@@ -76,7 +76,7 @@ extension Array where Element: NSAttributedString {
 			return addingSymbolicTraits(.traitItalic)
 		}
 
-		func addingSymbolicTraits(_ traits: UIFontDescriptorSymbolicTraits) -> UIFont? {
+        func addingSymbolicTraits(_ traits: UIFontDescriptor.SymbolicTraits) -> UIFont? {
 			let newTraits = fontDescriptor.symbolicTraits.union(traits)
 			guard let descriptor = fontDescriptor.withSymbolicTraits(newTraits) else {
 				return nil
