@@ -82,6 +82,11 @@ Add `git "gonzalezreal/Markup"` to your `Cartfile`
 
 Add `Package(url: "https://github.com/gonzalezreal/Markup.git", majorVersion: 1)` to your `Package.swift` file.
 
+**Swift compatibility**
+
+- Version `2.1` supports `Swift 4.2`
+- Version `2.0` supports `Swift 4`
+
 ## Help & Feedback
 - [Open an issue](https://github.com/gonzalezreal/Markup/issues/new) if you need help, if you found a bug, or if you want to discuss a feature request.
 - [Open a PR](https://github.com/gonzalezreal/Markup/pull/new/master) if you want to make some change to `Markup`.
