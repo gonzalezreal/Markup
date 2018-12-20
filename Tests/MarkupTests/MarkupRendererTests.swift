@@ -20,7 +20,7 @@ class MarkupRendererTests: XCTestCase {
 		// given
 		let input = "hello there"
 		let expected = NSAttributedString(string: "hello there",
-		                                  attributes: [NSAttributedStringKey.font: baseFont])
+                                          attributes: [NSAttributedString.Key.font: baseFont])
 
 		// when
 		let result = sut.render(text: input)
@@ -35,9 +35,9 @@ class MarkupRendererTests: XCTestCase {
 		let boldFont = baseFont.boldFont()!
 		let expected = [
 			NSAttributedString(string: "hello ",
-			                   attributes: [NSAttributedStringKey.font: baseFont]),
+                               attributes: [NSAttributedString.Key.font: baseFont]),
 			NSAttributedString(string: "there",
-			                   attributes: [NSAttributedStringKey.font: boldFont])
+                               attributes: [NSAttributedString.Key.font: boldFont])
 		].joined()
 
 		// when
@@ -53,9 +53,9 @@ class MarkupRendererTests: XCTestCase {
 		let italicFont = baseFont.italicFont()!
 		let expected = [
 			NSAttributedString(string: "hello ",
-			                   attributes: [NSAttributedStringKey.font: baseFont]),
+                               attributes: [NSAttributedString.Key.font: baseFont]),
 			NSAttributedString(string: "there",
-			                   attributes: [NSAttributedStringKey.font: italicFont])
+                               attributes: [NSAttributedString.Key.font: italicFont])
 		].joined()
 
 		// when
@@ -68,14 +68,14 @@ class MarkupRendererTests: XCTestCase {
 	func testDeletedText_render_rendersStrikethroughText() {
 		// given
 		let input = "hello ~there~"
-		let strikethroughAttributes: [NSAttributedStringKey: Any] = [
-			NSAttributedStringKey.font: baseFont,
-			NSAttributedStringKey.strikethroughStyle: NSUnderlineStyle.styleSingle.rawValue,
-			NSAttributedStringKey.baselineOffset: 0
+        let strikethroughAttributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: baseFont,
+            NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue,
+            NSAttributedString.Key.baselineOffset: 0
 		]
 		let expected = [
 			NSAttributedString(string: "hello ",
-			                   attributes: [NSAttributedStringKey.font: baseFont]),
+                               attributes: [NSAttributedString.Key.font: baseFont]),
 			NSAttributedString(string: "there",
 			                   attributes: strikethroughAttributes)
 			].joined()
@@ -93,13 +93,13 @@ class MarkupRendererTests: XCTestCase {
 		let boldItalicFont = baseFont.boldFont()!.italicFont()!
 		let expected = [
 			NSAttributedString(string: "hello ",
-			                   attributes: [NSAttributedStringKey.font: baseFont]),
+                               attributes: [NSAttributedString.Key.font: baseFont]),
 			NSAttributedString(string: "there",
-			                   attributes: [NSAttributedStringKey.font: boldItalicFont]),
+                               attributes: [NSAttributedString.Key.font: boldItalicFont]),
 			NSAttributedString(string: " ",
-			                   attributes: [NSAttributedStringKey.font: baseFont]),
+                               attributes: [NSAttributedString.Key.font: baseFont]),
 			NSAttributedString(string: "there",
-			                   attributes: [NSAttributedStringKey.font: boldItalicFont])
+                               attributes: [NSAttributedString.Key.font: boldItalicFont])
 		].joined()
 
 		// when
