@@ -18,21 +18,21 @@ private extension UnicodeScalar {
 }
 
 /**
-	Breaks a string into markup tokens.
+ Breaks a string into markup tokens.
 
-	How to use it:
+ How to use it:
 
-        var tokenizer = MarkupTokenizer(string: "_Hello *world*_")
-        while let token = tokenizer.nextToken() {
-            switch token {
-            case let .text(value):
-                print("text: \(value)"
-            case let .leftDelimiter(value):
-                print("left delimiter: \(value)"
-            case let .rightDelimiter(value):
-                print("right delimiter: \(value)"
-            }
-        }
+ var tokenizer = MarkupTokenizer(string: "_Hello *world*_")
+ while let token = tokenizer.nextToken() {
+ switch token {
+ case let .text(value):
+ print("text: \(value)"
+ case let .leftDelimiter(value):
+ print("left delimiter: \(value)"
+ case let .rightDelimiter(value):
+ print("right delimiter: \(value)"
+ }
+ }
  */
 struct MarkupTokenizer {
 	/// The input string
@@ -117,7 +117,7 @@ struct MarkupTokenizer {
 		guard CharacterSet.whitespaceAndPunctuation.contains(p) &&
 			!CharacterSet.whitespacesAndNewlines.contains(n) &&
 			!leftDelimiters.contains(delimiter) else {
-				return nil
+			return nil
 		}
 
 		leftDelimiters.append(delimiter)
@@ -138,7 +138,7 @@ struct MarkupTokenizer {
 		guard !CharacterSet.whitespacesAndNewlines.contains(p) &&
 			CharacterSet.whitespaceAndPunctuation.contains(n) &&
 			leftDelimiters.contains(delimiter) else {
-				return nil
+			return nil
 		}
 
 		while !leftDelimiters.isEmpty {
@@ -159,7 +159,7 @@ struct MarkupTokenizer {
 			return nil
 		}
 
-		return .text(String(input[startIndex..<currentIndex]))
+		return .text(String(input[startIndex ..< currentIndex]))
 	}
 
 	private mutating func scanUntil(_ predicate: (UnicodeScalar) -> Bool) {

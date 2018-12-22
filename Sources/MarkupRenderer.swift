@@ -85,6 +85,7 @@ extension Array where Element: NSAttributedString {
 			return UIFont(descriptor: descriptor, size: 0)
 		}
 	}
+
 #elseif os(OSX)
 	extension NSFont {
 		func boldFont() -> NSFont? {

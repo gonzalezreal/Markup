@@ -13,7 +13,7 @@ enum MarkupToken {
 }
 
 extension MarkupToken: Equatable {
-	static func ==(lhs: MarkupToken, rhs: MarkupToken) -> Bool {
+	static func == (lhs: MarkupToken, rhs: MarkupToken) -> Bool {
 		switch (lhs, rhs) {
 		case let (.text(lvalue), .text(rvalue)):
 			return lvalue == rvalue
