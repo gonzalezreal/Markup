@@ -17,23 +17,21 @@ private extension UnicodeScalar {
 	static let space: UnicodeScalar = " "
 }
 
-/**
- Breaks a string into markup tokens.
-
- How to use it:
-
- var tokenizer = MarkupTokenizer(string: "_Hello *world*_")
- while let token = tokenizer.nextToken() {
- switch token {
- case let .text(value):
- print("text: \(value)"
- case let .leftDelimiter(value):
- print("left delimiter: \(value)"
- case let .rightDelimiter(value):
- print("right delimiter: \(value)"
- }
- }
- */
+/// Breaks a string into markup tokens.
+///
+/// How to use it:
+///
+///		var tokenizer = MarkupTokenizer(string: "_Hello *world*_")
+///		while let token = tokenizer.nextToken() {
+///			switch token {
+///			case let .text(value):
+///				print("text: \(value)"
+///			case let .leftDelimiter(value):
+///				print("left delimiter: \(value)"
+///			case let .rightDelimiter(value):
+///				print("right delimiter: \(value)"
+///			}
+///		}
 struct MarkupTokenizer {
 	/// The input string
 	private let input: String.UnicodeScalarView
