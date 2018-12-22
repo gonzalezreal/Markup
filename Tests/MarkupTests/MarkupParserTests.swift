@@ -4,8 +4,8 @@
 // See LICENSE file for license
 //
 
-import XCTest
 import Markup
+import XCTest
 
 private func equalDump<T>(_ lhs: T, _ rhs: T) -> Bool {
 	var (ldump, rdump) = ("", "")
