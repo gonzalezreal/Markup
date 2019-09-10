@@ -76,7 +76,7 @@ Add `pod Markup` to your `Podfile`
 
 **Using Carthage**
 
-Add `git "gonzalezreal/Markup"` to your `Cartfile`
+Add `github "gonzalezreal/Markup"` to your `Cartfile`
 
 **Using the Swift Package Manager**
 
