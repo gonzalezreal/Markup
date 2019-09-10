@@ -84,6 +84,7 @@ Add `Package(url: "https://github.com/gonzalezreal/Markup.git", majorVersion: 1)
 
 **Swift compatibility**
 
+- Version `2.2` supports `Swift 5.0`
 - Version `2.1` supports `Swift 4.2`
 - Version `2.0` supports `Swift 4`
 
