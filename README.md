@@ -78,7 +78,7 @@ Both the parsing and the rendering will take linear time to complete.
 Add Markup as a dependency to your `Package.swift` file. For more information, see the [Swift Package Manager documentation](https://github.com/apple/swift-package-manager/tree/master/Documentation).
 
 ```
-.package(url: "https://github.com/gonzalezreal/Markup", from: "2.3")
+.package(url: "https://github.com/gonzalezreal/Markup", from: "2.3.0")
 ```
 
 **Using Carthage**
