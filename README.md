@@ -1,7 +1,10 @@
 # Markup
-[![CocoaPods](https://img.shields.io/cocoapods/v/Markup.svg)](https://cocoapods.org/pods/Markup)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Swift 5.1](https://img.shields.io/badge/Swift-5.1-orange.svg)
 [![Platforms](https://img.shields.io/cocoapods/p/Markup.svg)](https://cocoapods.org/pods/Markup)
+[![Swift Package Manager](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat)](https://swift.org/package-manager)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Markup.svg)](https://cocoapods.org/pods/Markup)
+[![Twitter: @gonzalezreal](https://img.shields.io/badge/twitter-@gonzalezreal-blue.svg?style=flat)](https://twitter.com/gonzalezreal)
 
 Markup generates attributed strings using a familiar markup syntax:
 
@@ -70,23 +73,21 @@ Both the parsing and the rendering will take linear time to complete.
 [This post](https://medium.com/makingtuenti/writing-a-lightweight-markup-parser-in-swift-5c8a5f0f793f) explains how Markup internally works, in case you are curious about the implementation.
 
 ## Installation
-**Using CocoaPods**
+**Using the Swift Package Manager**
 
-Add `pod Markup` to your `Podfile`
+Add Markup as a dependency to your `Package.swift` file. For more information, see the [Swift Package Manager documentation](https://github.com/apple/swift-package-manager/tree/master/Documentation).
+
+```
+.package(url: "https://github.com/gonzalezreal/Markup", from: "2.3")
+```
 
 **Using Carthage**
 
 Add `github "gonzalezreal/Markup"` to your `Cartfile`
 
-**Using the Swift Package Manager**
+**Using CocoaPods**
 
-Add `Package(url: "https://github.com/gonzalezreal/Markup.git", majorVersion: 1)` to your `Package.swift` file.
-
-**Swift compatibility**
-
-- Version `2.2` supports `Swift 5.0`
-- Version `2.1` supports `Swift 4.2`
-- Version `2.0` supports `Swift 4`
+Add `pod Markup` to your `Podfile`
 
 ## Help & Feedback
 - [Open an issue](https://github.com/gonzalezreal/Markup/issues/new) if you need help, if you found a bug, or if you want to discuss a feature request.
