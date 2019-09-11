@@ -7,17 +7,4 @@
    <FileRef
       location = "group:MarkupExample.xcodeproj">
    </FileRef>
-   <Group
-      location = "container:Playgrounds"
-      name = "Playgrounds">
-      <FileRef
-         location = "group:Tokenizer.playground">
-      </FileRef>
-      <FileRef
-         location = "group:Parser.playground">
-      </FileRef>
-      <FileRef
-         location = "group:Renderer.playground">
-      </FileRef>
-   </Group>
 </Workspace>
