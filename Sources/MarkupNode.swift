@@ -13,6 +13,8 @@ public enum MarkupNode {
 	case delete([MarkupNode])
 }
 
+extension MarkupNode: Equatable {}
+
 extension MarkupNode {
 	init?(delimiter: UnicodeScalar, children: [MarkupNode]) {
 		switch delimiter {

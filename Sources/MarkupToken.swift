@@ -12,20 +12,7 @@ enum MarkupToken {
 	case rightDelimiter(UnicodeScalar)
 }
 
-extension MarkupToken: Equatable {
-	static func == (lhs: MarkupToken, rhs: MarkupToken) -> Bool {
-		switch (lhs, rhs) {
-		case let (.text(lvalue), .text(rvalue)):
-			return lvalue == rvalue
-		case let (.leftDelimiter(lvalue), .leftDelimiter(rvalue)):
-			return lvalue == rvalue
-		case let (.rightDelimiter(lvalue), .rightDelimiter(rvalue)):
-			return lvalue == rvalue
-		default:
-			return false
-		}
-	}
-}
+extension MarkupToken: Equatable {}
 
 extension MarkupToken: CustomStringConvertible {
 	var description: String {

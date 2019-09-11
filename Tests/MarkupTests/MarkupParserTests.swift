@@ -7,20 +7,6 @@
 import Markup
 import XCTest
 
-private func equalDump<T>(_ lhs: T, _ rhs: T) -> Bool {
-	var (ldump, rdump) = ("", "")
-	dump(lhs, to: &ldump)
-	dump(rhs, to: &rdump)
-
-	return ldump == rdump
-}
-
-extension MarkupNode: Equatable {
-	public static func == (lhs: MarkupNode, rhs: MarkupNode) -> Bool {
-		return equalDump(lhs, rhs)
-	}
-}
-
 class MarkupParserTests: XCTestCase {
 	func testPlainText_parse_returnsPlainText() {
 		// given
