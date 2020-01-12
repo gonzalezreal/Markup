@@ -70,7 +70,7 @@ dump(nodes)
 ## Performance
 Both the parsing and the rendering will take linear time to complete.
 
-[This post](https://medium.com/makingtuenti/writing-a-lightweight-markup-parser-in-swift-5c8a5f0f793f) explains how Markup internally works, in case you are curious about the implementation.
+[This post](https://gonzalezreal.github.io/2017/07/20/writing-a-lightweight-markup-parser-in-swift.html) explains how Markup internally works, in case you are curious about the implementation.
 
 ## Installation
 **Using the Swift Package Manager**
